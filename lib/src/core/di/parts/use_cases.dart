@@ -39,3 +39,10 @@ GetUserLoginStatusUseCase getUserLoginStatusUseCase(Ref ref) {
 MarkOnboardingCompletedUseCase markOnboardingCompletedUseCase(Ref ref) {
   return MarkOnboardingCompletedUseCase(ref.read(routerRepositoryProvider));
 }
+
+@riverpod
+ProductListUseCase productListUseCase(Ref ref) {
+  return ProductListUseCase(
+    repository: ref.read(productListRepositoryProvider),
+  );
+}

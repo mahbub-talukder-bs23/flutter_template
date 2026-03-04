@@ -17,3 +17,11 @@ RouterRepository routerRepository(Ref ref) {
 LocaleRepository localeRepository(Ref ref) {
   return LocaleRepositoryImpl(ref.read(cacheServiceProvider));
 }
+
+@Riverpod(keepAlive: true)
+ProductListRepository productListRepository(Ref ref) {
+  return ProductListRepositoryImpl(
+    restClient: ref.read(restClientServiceProvider),
+    paginationStrategy: OffsetPaginationStrategy<ProductResponseEntity>(),
+  );
+}

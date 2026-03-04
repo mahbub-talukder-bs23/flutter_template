@@ -429,6 +429,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password must contain at least one special character'**
   String get passwordSpecialCharValidation;
+
+  /// No description provided for @products.
+  ///
+  /// In en, this message translates to:
+  /// **'Products'**
+  String get products;
 }
 
 class _AppLocalizationsDelegate

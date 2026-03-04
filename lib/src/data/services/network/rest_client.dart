@@ -12,4 +12,10 @@ abstract class RestClient {
 
   @POST(Endpoints.login)
   Future<HttpResponse> login(@Body() Map<String, dynamic> request);
+
+  @GET(Endpoints.productList)
+  Future<HttpResponse> getProductList({
+    @Query('limit') required int limit,
+    @Query('skip') required int skip,
+  });
 }
